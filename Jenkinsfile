@@ -32,7 +32,8 @@ pipeline {
         }
         stage('Build Stages') {
             agent { label 'jenkins-base-agent' }
-            stage('Mirror to public Github') {
+            stages {
+                stage('Mirror to public Github') {
                     when { branch 'master' }
                         steps {
                             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
@@ -43,6 +44,7 @@ pipeline {
                             }
                         }
                 }
+            }
         }
     }
 }
