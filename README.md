@@ -11,6 +11,13 @@ A single Corefile would be the base.
 Incorporating the reload/auto module to trigger changes after modification.
 Database files for each zone.
 
+## Authentication
+Keep the application simple for initial prototyping.
+Thoughts:
+* Simple Auth is required. Default = admin:admin
+* Allow for a bcrypt hash to be passed at runtime
+* `./coredns-rest --adminpass <bcrypthashofpassword>` 
+
 ## Deployment
 
 ### Static Container
