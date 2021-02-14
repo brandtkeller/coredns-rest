@@ -30,7 +30,7 @@ pipeline {
                 
             }
         }
-        stage('Build Stages') {
+        stage('Mirror Stage') {
             agent { label 'jenkins-base-agent' }
             stages {
                 stage('Mirror to public Github') {
